@@ -1,26 +1,34 @@
-interface ContractsGraphQLResponseQuery {
+
+export type Contracts = Array<{contract: {chainId: string, address: string}}>
+export type Domains = Array<{
+  id: string
+  contracts: Contracts
+}>
+export interface ContractsGraphQLResponseQuery {
   data: {
-    domains: Array<{
-      id: string
-      contracts: Array<{contract: {chainId: string, address: string}}>
-    }>
+    domains: Domains
   }
 }
 
-export async function queryTheGraphGraphQl(body: string) {
-  const r = await fetch('https://api.thegraph.com/subgraphs/name/alavarello/sci-goerli', {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-    },
-    body
-  })
+export async function queryTheGraphGraphQl(body: string): Promise<Domains | null>   {
+  try {
+    const response = await fetch('https://api.thegraph.com/subgraphs/name/alavarello/sci-goerli', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body
+    })
 
-  if (r.status !== 200) {
-    return null;
+    if (response.status !== 200) {
+      return null;
+    }
+
+    const json: ContractsGraphQLResponseQuery = await response.json()
+    return json.data.domains;
+
+  } catch(error: unknown) {
+    console.error(error)
+    return null
   }
-
-
-  const response: ContractsGraphQLResponseQuery = await r.json()
-  return response.data;
 }
