@@ -9,9 +9,10 @@ const NOT_VERIFIED_IMAGE = image('<svg xmlns="http://www.w3.org/2000/svg"  viewB
 
 async function getWhitelistedAddressForDomain(domain: string, chainId: string, address: string): Promise<Domains | null> {
   const response = await queryTheGraphGraphQl(JSON.stringify({
-    THE_GRAPH_CONTRACTS_WHITELISTED_QUERY,
+    query: THE_GRAPH_CONTRACTS_WHITELISTED_QUERY,
     variables: {
-      domain, chainId, address,
+      domain,
+      contract: `${chainId}:${address}`,
     }
   }));
 
