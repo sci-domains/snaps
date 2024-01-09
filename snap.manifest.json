@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Verify your contract interactions with Secure Contract Interaction.",
   "proposedName": "SCI Verification",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/secure-cl/snaps.git"
   },
   "source": {
-    "shasum": "Zzr3Sx6Cr67pGPqalRQjQgCdsDC2eU3qBQ+C9M64LfE=",
+    "shasum": "NpRX5iJ0pA2hV5+nE48iatelrzh+uGgcyNVM+WDeJ0E=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
