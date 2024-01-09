@@ -13,7 +13,7 @@ export class SCIContractProvider {
     this.SCIContract = SCI__factory.connect(contractAddress, provider)
   }
 
-  isVerifiedForDomain = (domain: string, chainId: string, address: string): Promise<boolean> => {
+  isVerifiedForDomain = async (domain: string, chainId: string, address: string): Promise<boolean> => {
     return this.SCIContract.isVerifiedForDomain(domain, chainId, address)
   }
 }

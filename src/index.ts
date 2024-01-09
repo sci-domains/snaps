@@ -28,7 +28,7 @@ export const onTransaction: OnTransactionHandler = async ({
     content: panel([
       heading('SCI Verification'),
       text(`Origin: **${transactionOrigin}**!`),
-      text(`Chain ${chainId}`),
+      text(`Chain id: ${chainId}`),
       text(`Contract ${transaction.to}`),
       divider(),
       isWhitelisted ? text('This Contract is verified') : text('This Contract is not verified!'),
