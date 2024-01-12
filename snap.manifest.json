@@ -7,12 +7,12 @@
     "url": "https://github.com/secure-cl/snaps.git"
   },
   "source": {
-    "shasum": "s7YQpr90MhmW03HRJCM16o0z39xHmPtblJzxjEp6Y9o=",
+    "shasum": "fbRQiAuCPDtSujxqtxP+x8hnVOYt0UIiHZqHU6iWQGk=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/scilogo.svg",
-        "packageName": "snap",
+        "packageName": "@secure-ci/snap",
         "registry": "https://registry.npmjs.org/"
       }
     }
