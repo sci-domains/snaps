@@ -1,23 +1,21 @@
-# secure-ci Snaps
+# Secure Contract Interaction (SCI) Metamask Snap
 
 ## Description
 
-Contains the main code to be run to get the Metamask snap for secure CI up and running.
+We aim to bolster security measures within the web3 ecosystem by establishing an on-chain registry that allows owners to verify which smart contracts should be allowed to interact with their web domains and the infrastructure around it.
 
-## How to run
-On the `snaps` folder root run
+SCI’s purpose is to verify that websites are interacting with validated and authorized smart contracts minimizing user risks and exploits.
+
+With this snap you will be able to review if the domain has authorized the contract for each Metamask transaction.
+
+### Development
+
+##  How to run
 - nvm use
 - yarn
 - yarn start
 
-This will start the snap in localhost:8080
+This will start the snap in localhost:8080 by default
 
-## Testing
-
-The snap comes with some basic tests, to demonstrate how to write tests for
-snaps. To test the snap, run `yarn test` in this directory. This will use
-[`@metamask/snaps-jest`](https://github.com/MetaMask/snaps/tree/main/packages/snaps-jest)
-to run the tests in `src/index.test.ts`.
-
-## More on Metamask Snaps
+### More on Metamask Snaps
 - [Metamask Snaps Docs](https://docs.metamask.io/snaps/)
