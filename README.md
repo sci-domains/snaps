@@ -8,9 +8,9 @@ SCI’s purpose is to verify that websites are interacting with validated and au
 
 With this snap you will be able to review if the domain has authorized the contract for each Metamask transaction.
 
-### Development
+## Development
 
-##  How to run
+###  How to run
 - nvm use
 - yarn
 - yarn start

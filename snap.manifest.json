@@ -1,7 +1,7 @@
 {
   "version": "0.0.1",
-  "description": "Verify your contract interactions with Secure Contract Interaction.",
-  "proposedName": "SCI Verification",
+  "description": "Secure Contract Interaction.",
+  "proposedName": "SCI",
   "repository": {
     "type": "git",
     "url": "https://github.com/secure-cl/snaps.git"

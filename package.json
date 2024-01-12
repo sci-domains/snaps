@@ -1,7 +1,7 @@
 {
-  "name": "snap",
-  "version": "0.0.1",
-  "description": "The Secure Contract Interaction (SCI) Metamask snap.",
+  "name": "sci-snap",
+  "version": "0.0.2",
+  "description": "Secure Contract Interaction (SCI) Metamask snap.",
   "repository": {
     "type": "git",
     "url": "https://github.com/secure-cl/snaps.git"
