@@ -8,8 +8,8 @@ import {
   Interface,
 } from "ethers";
 import type { Signer, ContractDeployTransaction, ContractRunner } from "ethers";
-import type { NonPayableOverrides } from "../../common";
-import type { SCI, SCIInterface } from "../../contracts/SCI";
+import type { NonPayableOverrides } from "./common";
+import type { SCI, SCIInterface } from "./SCI";
 
 const _abi = [
   {
