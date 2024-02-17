@@ -1,7 +1,6 @@
 import { Provider } from "ethers";
 import { SCI_GOERLI_CONTRACT_ADDRESS } from "../constants";
-import { SCI } from "../typechain/SCI";
-import { SCI__factory } from "../typechain/SCI__factory";
+import {SCI, SCI__factory} from "@secure-ci/core/dist/typechain-types";
 
 export class SCIContractFactory {
   private static _configs: {[key: number]: string} = {
