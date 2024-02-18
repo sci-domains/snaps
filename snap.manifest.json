@@ -7,7 +7,7 @@
     "url": "https://github.com/secure-cl/snaps.git"
   },
   "source": {
-    "shasum": "GwUMYdOVEPBTKTGLdBLSHpIBIxVrg7lgs2rAk2WdByg=",
+    "shasum": "qSqlHrc8ypLp28m45f+W0FTOi2ySGMtPcBqf+qCE89g=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
