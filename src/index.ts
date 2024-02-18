@@ -16,8 +16,9 @@ export const onTransaction: OnTransactionHandler = async ({
   const chainNumber = chainId.split(':').at(1);
   const provider = new AlchemyProvider('goerli', ALCHEMY_PROVIDER_API_KEY)
   const contract = await SCIContractFactory.getContract(provider)
+
   const isWhitelisted = await contract.isVerifiedForDomain(
-    domain as string, chainNumber as string, transaction.to as string,
+    transactionOrigin as string, chainNumber as string, transaction.to as string,
   );
 
   return {
