@@ -17,9 +17,16 @@ export const onTransaction: OnTransactionHandler = async ({
   const provider = new AlchemyProvider('goerli', ALCHEMY_PROVIDER_API_KEY)
   const contract = await SCIContractFactory.getContract(provider)
 
-  const isWhitelisted = await contract.isVerifiedForDomain(
-    transactionOrigin as string, chainNumber as string, transaction.to as string,
-  );
+  let isWhitelisted = false;
+
+  try {
+    isWhitelisted = await contract.isVerifiedForDomain(
+      transactionOrigin as string, chainNumber as string, transaction.to as string,
+    );
+
+  } catch (error) {
+    console.error('Error verifiying domain:', error);
+  }
 
   return {
     content: panel([
