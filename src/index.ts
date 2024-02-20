@@ -33,9 +33,9 @@ export const onTransaction: OnTransactionHandler = async ({
 
   try {
     isWhitelisted = await contract.isVerifiedForDomain(
-      transactionOrigin as string,
-      chainNumber as string,
+      domain as string,
       transaction.to as string,
+      chainNumber as string,
     );
   } catch (error) {
     console.error('Error verifiying domain:', error);

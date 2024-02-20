@@ -1,5 +1,5 @@
 {
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Secure Contract Interaction.",
   "proposedName": "SCI",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/secure-cl/snaps.git"
   },
   "source": {
-    "shasum": "qalPW+f79Aq545i2OXjfpraPMLkV30a61RnACYQh7Xc=",
+    "shasum": "l1TF7pvOYtkIGr+SEw74aW69hpkpny0AGNGw9MXEqro=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

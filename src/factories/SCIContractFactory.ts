@@ -1,5 +1,5 @@
 import type { SCI } from '@secure-ci/core/dist/types';
-import { SCI__factory as SCIFactory } from '@secure-ci/core/dist/types';
+import { SCI__factory as SCIFactory } from '@secure-ci/core/dist/types/factories/contracts';
 import type { Provider } from 'ethers';
 
 import { SCI_GOERLI_CONTRACT_ADDRESS } from '../constants';
