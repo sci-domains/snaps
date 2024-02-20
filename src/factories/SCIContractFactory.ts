@@ -1,12 +1,11 @@
 import type { SCI } from '@secure-ci/core/dist/types';
 import { SCI__factory as SCIFactory } from '@secure-ci/core/dist/types/factories/contracts';
 import type { Provider } from 'ethers';
-
-import { SCI_GOERLI_CONTRACT_ADDRESS } from '../constants';
+import * as sciGoerliDeployment from '@secure-ci/core/deployments/goerli/SCI.json'
 
 export class SCIContractFactory {
   private static readonly _configs: { [key: number]: string } = {
-    5: SCI_GOERLI_CONTRACT_ADDRESS,
+    5: sciGoerliDeployment.address,
   };
 
   static async getContract(_provider: Provider): Promise<SCI> {

@@ -1,6 +1,6 @@
 {
   "name": "@secure-ci/snap",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Secure Contract Interaction (SCI) Metamask snap.",
   "repository": {
     "type": "git",
