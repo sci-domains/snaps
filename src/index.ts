@@ -1,6 +1,5 @@
 import type { OnTransactionHandler } from '@metamask/snaps-types';
 import {
-  copyable,
   divider,
   heading,
   image,
@@ -9,7 +8,6 @@ import {
 } from '@metamask/snaps-ui';
 import { AlchemyProvider } from 'ethers';
 
-import { ALCHEMY_PROVIDER_API_KEY } from './constants';
 import { SCIContractFactory } from './factories/SCIContractFactory';
 
 const VERIFIED_IMAGE = image(
@@ -26,7 +24,7 @@ export const onTransaction: OnTransactionHandler = async ({
 }) => {
   const domain = transactionOrigin?.split('//').at(1);
   const chainNumber = chainId.split(':').at(1);
-  const provider = new AlchemyProvider('goerli', ALCHEMY_PROVIDER_API_KEY);
+  const provider = new AlchemyProvider('mainnet', process.env.ALCHEMY_PROVIDER_API_KEY);
   const contract = await SCIContractFactory.getContract(provider);
 
   let isWhitelisted = false;
@@ -52,9 +50,6 @@ export const onTransaction: OnTransactionHandler = async ({
         ? text('This Contract is verified')
         : text('This Contract is not verified!'),
       isWhitelisted ? VERIFIED_IMAGE : NOT_VERIFIED_IMAGE,
-      divider(),
-      text('Additional info can be found at:'),
-      copyable(`https://secureci.xyz/domains/${domain}`),
     ]),
   };
 };

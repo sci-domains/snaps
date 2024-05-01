@@ -1,5 +1,7 @@
 import type { SnapConfig } from '@metamask/snaps-cli';
 import { resolve } from 'path';
+import * as dotenv from "dotenv";
+dotenv.config();
 
 const config: SnapConfig = {
   bundler: 'webpack',
@@ -9,6 +11,9 @@ const config: SnapConfig = {
   },
   polyfills: {
     buffer: true,
+  },
+  environment: {
+    ALCHEMY_PROVIDER_API_KEY: process.env.ALCHEMY_PROVIDER_API_KEY,
   },
 };
 

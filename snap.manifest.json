@@ -1,13 +1,13 @@
 {
-  "version": "0.0.9",
-  "description": "Secure Contract Interaction.",
+  "version": "0.0.10",
+  "description": "Secure your transactions and interactions accross the web3 ecosystem with Metamask and the SCI protocol.",
   "proposedName": "SCI",
   "repository": {
     "type": "git",
     "url": "https://github.com/secure-cl/snaps.git"
   },
   "source": {
-    "shasum": "aQHBuu5gm2RwhM52OuxaO5JiqHLru9URIkscdtTRjf0=",
+    "shasum": "DSX5y4UU17/ZWizU5/c1JLUU6ian8TRYqEL3dqY1xMc=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

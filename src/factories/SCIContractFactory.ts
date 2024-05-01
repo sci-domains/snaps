@@ -5,6 +5,7 @@ import * as sciGoerliDeployment from '@secure-ci/core/deployments/goerli/SCI.jso
 
 export class SCIContractFactory {
   private static readonly _configs: { [key: number]: string } = {
+    1: '0x76ff9ffb76f889f6e60e491d00dd2aa0a9bfb6ba',
     5: sciGoerliDeployment.address,
   };
 
