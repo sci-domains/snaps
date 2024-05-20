@@ -4,10 +4,10 @@
   "proposedName": "SCI",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sci-domains/snaps"
+    "url": "https://github.com/sci-domains/snaps.git"
   },
   "source": {
-    "shasum": "tlL7Z9aqv0x6WX/cLlSlaTbwZ6dgE2UT8lpsh0NAAsg=",
+    "shasum": "VPuHH7PdnjTdOUezXMi3NQOeHwBMLRmSBMMcwIirHrs=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
