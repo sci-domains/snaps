@@ -4,7 +4,7 @@
   "proposedName": "SCI",
   "repository": {
     "type": "git",
-    "url": "https://github.com/secure-cl/snaps.git"
+    "url": "https://github.com/sci-domains/snaps"
   },
   "source": {
     "shasum": "aZh0i9HsSvJq3JvtAoMrknwJH6yspzrjOd1y/S33El8=",
