@@ -11,10 +11,34 @@ import { AlchemyProvider } from 'ethers';
 import { SCIContractFactory } from './factories/SCIContractFactory';
 
 const VERIFIED_IMAGE = image(
-  '<svg style="width: 100%; width: 50px; height: 50px;" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 40 40" width="16px" height="16px"><path fill="#bae0bd" d="M20,38.5C9.8,38.5,1.5,30.2,1.5,20S9.8,1.5,20,1.5S38.5,9.8,38.5,20S30.2,38.5,20,38.5z"/><path fill="#5e9c76" d="M20,2c9.9,0,18,8.1,18,18s-8.1,18-18,18S2,29.9,2,20S10.1,2,20,2 M20,1C9.5,1,1,9.5,1,20s8.5,19,19,19,s19-8.5,19-19S30.5,1,20,1L20,1z"/><path fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3" d="M11.2,20.1l5.8,5.8l13.2-13.2"/></svg>',
+  `<svg width="200" height="25" viewBox="0 0 200 25" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin">
+    <g clip-path="url(#clip0_8_612)">
+      <rect x="0.940918" y="0.100647" width="24" height="24" rx="12" fill="#C8FCB6"/>
+      <path d="M6.58704 12.9011L10.6041 16.6854L19.6607 8.15369" stroke="#257F06" stroke-width="1.24759" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12.9411 1.34824C18.87 1.34824 23.6935 6.17173 23.6935 12.1006C23.6935 18.0295 18.87 22.853 12.9411 22.853C7.01224 22.853 2.18876 18.0295 2.18876 12.1006C2.18876 6.17173 7.01224 1.34824 12.9411 1.34824ZM12.9411 0.100647C6.31376 0.100647 0.941162 5.47324 0.941162 12.1006C0.941162 18.728 6.31376 24.1006 12.9411 24.1006C19.5685 24.1006 24.9411 18.728 24.9411 12.1006C24.9411 5.47324 19.5686 0.100647 12.9411 0.100647Z" fill="#257F06"/>
+    </g>
+    <defs>
+      <clipPath id="clip0_8_612">
+        <rect x="0.940918" y="0.100647" width="24" height="24" rx="12" fill="white"/>
+      </clipPath>
+    </defs>
+  </svg>`
 );
+
 const NOT_VERIFIED_IMAGE = image(
-  '<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 40 40" width="40px" height="40px"><path fill="#f78f8f" d="M20,38.5C9.799,38.5,1.5,30.201,1.5,20S9.799,1.5,20,1.5S38.5,9.799,38.5,20S30.201,38.5,20,38.5z"/><path fill="#c74343" d="M20,2c9.925,0,18,8.075,18,18s-8.075,18-18,18S2,29.925,2,20S10.075,2,20,2 M20,1 C9.507,1,1,9.507,1,20s8.507,19,19,19s19-8.507,19-19S30.493,1,20,1L20,1z"/><path fill="#fff" d="M18.5 10H21.5V30H18.5z" transform="rotate(-134.999 20 20)"/><path fill="#fff" d="M18.5 10H21.5V30H18.5z" transform="rotate(-45.001 20 20)"/></svg>',
+  `<svg width="200" height="25" viewBox="0 0 200 25" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin">
+    <g clip-path="url(#clip0_7_410)">
+      <rect x="0" y="0.100685" width="24" height="24" rx="12" fill="#FFD0D6"/>
+      <path d="M17.8151 17.156L6.18555 7.04533" stroke="#850010" stroke-width="1.24759" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.18463 17.156L17.8142 7.04533" stroke="#850010" stroke-width="1.24759" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 1.34828C17.9289 1.34828 22.7524 6.17177 22.7524 12.1007C22.7524 18.0296 17.9289 22.853 12 22.853C6.07108 22.853 1.24759 18.0296 1.24759 12.1007C1.24759 6.17177 6.07108 1.34828 12 1.34828ZM12 0.100685C5.37259 0.100685 0 5.47328 0 12.1007C0 18.728 5.37259 24.1006 12 24.1006C18.6274 24.1006 24 18.728 24 12.1007C24 5.47328 18.6274 0.100685 12 0.100685Z" fill="#850010"/>
+    </g>
+    <defs>
+      <clipPath id="clip0_7_410">
+        <rect x="0" y="0.100685" width="24" height="24" rx="12" fill="white"/>
+      </clipPath>
+    </defs>
+  </svg>`
 );
 
 export const onTransaction: OnTransactionHandler = async ({
@@ -41,15 +65,18 @@ export const onTransaction: OnTransactionHandler = async ({
 
   return {
     content: panel([
-      heading('SCI Verification'),
-      text(`Origin: **${transactionOrigin!}**!`),
-      text(`Chain id: ${chainId}`),
-      text(`Contract ${transaction.to}`),
-      divider(),
-      isWhitelisted
-        ? text('This Contract is verified')
-        : text('This Contract is not verified!'),
       isWhitelisted ? VERIFIED_IMAGE : NOT_VERIFIED_IMAGE,
+      heading('SCI Verification'),
+      isWhitelisted
+      ? text('This Contract is verified')
+      : text('This Contract is not verified!'),
+      divider(),
+      text('**Origin**'),
+      text(transactionOrigin),
+      text('**Chain ID**'),
+      text(chainId),
+      text('**Contract**'),
+      text(transaction.to?.toString()),
     ]),
   };
 };
