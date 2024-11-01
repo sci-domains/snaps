@@ -1,6 +1,7 @@
 import type { SnapConfig } from '@metamask/snaps-cli';
+import * as dotenv from 'dotenv';
 import { resolve } from 'path';
-import * as dotenv from "dotenv";
+
 dotenv.config();
 
 const config: SnapConfig = {
@@ -14,6 +15,7 @@ const config: SnapConfig = {
   },
   environment: {
     ALCHEMY_PROVIDER_API_KEY: process.env.ALCHEMY_PROVIDER_API_KEY,
+    CHAIN: process.env.CHAIN,
   },
 };
 

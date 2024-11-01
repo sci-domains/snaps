@@ -1,6 +1,6 @@
 {
   "name": "@secure-ci/snap",
-  "version": "0.0.12",
+  "version": "0.0.14",
   "description": "Secure Contract Interaction (SCI) Metamask snap.",
   "repository": {
     "type": "git",
@@ -27,13 +27,15 @@
     "test": "jest"
   },
   "dependencies": {
+    "@ensdomains/ensjs": "^4.0.1-alpha.0",
     "@metamask/snaps-types": "^3.0.1",
     "@metamask/snaps-ui": "^3.0.1",
-    "@secure-ci/core": "^0.0.7",
+    "@secure-ci/core": "^0.0.12",
     "buffer": "^6.0.3",
     "dotenv": "^16.4.5",
     "eslint-plugin-jsdoc": "^48.1.0",
-    "ethers": "^6.8.1"
+    "ethers": "^6.8.1",
+    "viem": "^2.21.37"
   },
   "devDependencies": {
     "@jest/globals": "^29.5.0",

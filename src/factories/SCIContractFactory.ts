@@ -1,22 +1,33 @@
-import type { SCI } from '@secure-ci/core/dist/types';
-import { SCI__factory as SCIFactory } from '@secure-ci/core/dist/types/factories/contracts';
+import type { SCI } from '@secure-ci/core';
+import { SCI__factory } from '@secure-ci/core';
+import * as rawAddresses from '@secure-ci/core/addresses.json';
 import type { Provider } from 'ethers';
-import * as sciGoerliDeployment from '@secure-ci/core/deployments/goerli/SCI.json'
+
+type AddressMap = {
+  [networkId: string]: {
+    'SciRegistry#SciRegistry': string;
+    'PublicListVerifier#PublicListVerifier': string;
+    'SciRegstrar#SciRegistrar': string;
+    'ProxyModule#SCI': string;
+    'ProxyModule#TransparentUpgradeableProxy': string;
+    'ProxyModule#ProxyAdmin': string;
+    'SciModule#SCI': string;
+  };
+};
+
+const addresses = rawAddresses as AddressMap;
 
 export class SCIContractFactory {
-  private static readonly _configs: { [key: number]: string } = {
-    1: '0x76ff9ffb76f889f6e60e491d00dd2aa0a9bfb6ba',
-    5: sciGoerliDeployment.address,
-  };
-
   static async getContract(_provider: Provider): Promise<SCI> {
     const network = await _provider.getNetwork();
-    const contractAddress = this._configs[network.chainId as unknown as number];
+    const contractAddress =
+      addresses[network.chainId.toString()]?.['SciModule#SCI'];
 
     if (!contractAddress) {
       throw Error(`Could not find a contract for ${network.chainId}`);
     }
 
-    return SCIFactory.connect(contractAddress, _provider);
+    // TODO: Fix _provider cast to any. Expects ContractRunner
+    return SCI__factory.connect(contractAddress, _provider as any);
   }
 }
