@@ -29,7 +29,7 @@ export const onTransaction: OnTransactionHandler = async ({
   let registrationTime = 0n;
 
   try {
-    registrationTime = await contract.isVerifiedForDomainHash.staticCall(
+    registrationTime = await contract.isVerifiedForDomainHash(
       domainHash,
       transaction.to as string,
       chainNumber as string,
