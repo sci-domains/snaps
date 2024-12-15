@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
+    "jsx": "react-jsx",
+    "jsxImportSource": "@metamask/snaps-sdk",
     "esModuleInterop": true,
     "exactOptionalPropertyTypes": true,
     "forceConsistentCasingInFileNames": true,
@@ -12,6 +15,7 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2020",
-    "resolveJsonModule": true
-  }
+    "resolveJsonModule": true,
+    },
+    "include": ["**/*.ts", "**/*.tsx"]
 }
