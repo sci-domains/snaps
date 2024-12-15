@@ -4708,15 +4708,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@secure-ci/core@npm:^0.0.12":
-  version: 0.0.12
-  resolution: "@secure-ci/core@npm:0.0.12"
+"@secure-ci/core@npm:^0.0.13":
+  version: 0.0.13
+  resolution: "@secure-ci/core@npm:0.0.13"
   dependencies:
     "@ensdomains/ens-contracts": 1.2.2
     "@openzeppelin/contracts": 5.1.0
     "@openzeppelin/contracts-upgradeable": 5.1.0
     ethers: 6.13.4
-  checksum: 6616168a660067f43755e371ed7c78f115a1a64822f66f24b730f5ad046def04168ef6968d6f68e2788d4563645dc8f33f06c0a20d7e03fa9dbdb7c29d6f20dd
+  checksum: 3114274d9220e057dc728b602463c339a5d7e235c92656191e4e5c700705873c8463cfb44ce6e8ec55d95d61ee862711f59d9ccb0c88ee1651abe1281e344d4b
   languageName: node
   linkType: hard
 
@@ -4735,7 +4735,7 @@ __metadata:
     "@metamask/snaps-jest": ^3.0.0
     "@metamask/snaps-types": ^3.0.1
     "@metamask/snaps-ui": ^3.0.1
-    "@secure-ci/core": ^0.0.12
+    "@secure-ci/core": ^0.0.13
     "@typescript-eslint/eslint-plugin": ^5.42.1
     "@typescript-eslint/parser": ^5.42.1
     buffer: ^6.0.3
