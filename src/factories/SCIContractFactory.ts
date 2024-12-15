@@ -1,8 +1,9 @@
 import type { SCI } from '@secure-ci/core';
 import { SCI__factory } from '@secure-ci/core';
-import * as rawAddresses from '@secure-ci/core/addresses.json';
+import * as rawAddresses from '@secure-ci/core/deployments.json';
 import type { Provider } from 'ethers';
 
+// TODO: Deployments mapping can come from the scure-ci core package
 type AddressMap = {
   [networkId: string]: {
     'SciRegistry#SciRegistry': string;

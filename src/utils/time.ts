@@ -1,6 +1,7 @@
 /**
- *
- * @param timestamp
+ * Formats a timestamp into a human-readable string with a date and time in 12-hour format.
+ * @param timestamp - The timestamp to format, representing seconds since the Unix epoch.
+ * @returns A formatted string in the format: "DD MMM YYYY HH:MMAM/PM".
  */
 export function formatTimestamp(timestamp: bigint): string {
   // Convert seconds to milliseconds by multiplying by 1000

@@ -12,7 +12,12 @@ export const onTransaction: OnTransactionHandler = async ({
   transaction,
   chainId,
 }) => {
-  const domain = transactionOrigin?.split('//').at(1) || '';
+  const domain = transactionOrigin?.split('//').at(1);
+  if (!domain) {
+    throw Error(
+      `Could not get domain from transaction origin: ${transactionOrigin}`,
+    );
+  }
   const domainHash = namehash(domain.toString());
   const chainNumber = chainId.split(':').at(1);
   const provider = new AlchemyProvider(
