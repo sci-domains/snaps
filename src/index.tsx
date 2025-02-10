@@ -61,15 +61,17 @@ export const onTransaction: OnTransactionHandler = async ({
         <Row label="Contract" tooltip={transaction.to.toString()}>
           <Address address={formatAddress(transaction.to.toString())}/>
         </Row>
-        <Row label="Registration">
-          <Text>{formatTimestamp(registrationTime)}</Text>
-        </Row>
+        {contractIsVerified &&
+          <Row label="Registration">
+            <Text>{formatTimestamp(registrationTime)}</Text>
+          </Row>
+        }
         {!contractIsVerified &&
           <Box>
             <Divider/>
             <Heading>Are you the owner of this domain?</Heading>
             <Box alignment="center">
-              <Link href="https://www.app.sci.domains/domains/add">Verify Domain</Link>
+              <Link href="https://app.sci.domains/domains/add">Verify Domain</Link>
             </Box>
           </Box>
         }
