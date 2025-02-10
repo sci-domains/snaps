@@ -7,7 +7,7 @@
     "url": "https://github.com/sci-domains/snaps.git"
   },
   "source": {
-    "shasum": "+8qO7bIJeGGWXGBYZbeY39ePhtkLpgdrE3w3ESK9EqA=",
+    "shasum": "EabbwGX6NeUOPi9xwatlTvQDZsKBe7X+AXtkdflN64E=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

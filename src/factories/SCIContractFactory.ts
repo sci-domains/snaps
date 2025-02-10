@@ -1,34 +1,20 @@
 import type { SCI } from '@secure-ci/core';
 import { SCI__factory } from '@secure-ci/core';
-import * as rawAddresses from '@secure-ci/core/deployments.json';
-import type { Provider } from 'ethers';
-
-// TODO: Deployments mapping can come from the scure-ci core package
-type AddressMap = {
-  [networkId: string]: {
-    'SciRegistry#SciRegistry': string;
-    'PublicListVerifier#PublicListVerifier': string;
-    'SciRegstrar#SciRegistrar': string;
-    'ProxyModule#SCI': string;
-    'ProxyModule#TransparentUpgradeableProxy': string;
-    'ProxyModule#ProxyAdmin': string;
-    'SciModule#SCI': string;
-  };
-};
-
-const addresses = rawAddresses as AddressMap;
+import { deployments } from '@secure-ci/core/dist/deployments'
+import { Provider } from 'ethers';
 
 export class SCIContractFactory {
   static async getContract(_provider: Provider): Promise<SCI> {
     const network = await _provider.getNetwork();
-    const contractAddress =
-      addresses[network.chainId.toString()]?.['SciModule#SCI'];
+    const contractAddress = deployments[network.chainId.toString()]?.['SciModule#SCI']
 
     if (!contractAddress) {
       throw Error(`Could not find a contract for ${network.chainId}`);
     }
 
     // TODO: Fix _provider cast to any. Expects ContractRunner
-    return SCI__factory.connect(contractAddress, _provider as any);
+    return SCI__factory.connect(
+      contractAddress, _provider
+    );
   }
 }

@@ -29,9 +29,9 @@
   "dependencies": {
     "@ensdomains/ensjs": "^4.0.1-alpha.0",
     "@metamask/snaps-sdk": "^6.10.0",
-    "@secure-ci/core": "^0.0.13",
+    "@secure-ci/core": "^0.0.20",
     "dotenv": "^16.0.1",
-    "ethers": "^6.8.1",
+    "ethers": "^6.13.4",
     "viem": "^2.21.37"
   },
   "devDependencies": {
