@@ -1,5 +1,5 @@
 {
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Secure your transactions and interactions across the web3 ecosystem with Metamask and the SCI protocol.",
   "proposedName": "SCI",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/sci-domains/snaps.git"
   },
   "source": {
-    "shasum": "JR+2c+6Fmto3hel/5niAYV00ksiwNIa60V+ztNgH81Q=",
+    "shasum": "PChbGT2/bzUbrx2tvJ91w102n5CQHlXPZO0h49XxnTE=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

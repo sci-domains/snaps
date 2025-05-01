@@ -7,7 +7,7 @@ import { AlchemyProvider } from "ethers";
 import { extractDomain, formatAddress, getRegistrationTime, wasVerifiedRecently } from "./utils/helpers";
 import { formatTimestamp } from "./utils/time";
 
-const ONE_DAY_MS = 86_400_000n * BigInt(3); // 3 days in milliseconds as bigint
+const ONE_DAY_MS = 86_400_000n * BigInt(3);
 
 // Handle outgoing transactions.
 export const onTransaction: OnTransactionHandler = async ({
@@ -71,7 +71,7 @@ export const onTransaction: OnTransactionHandler = async ({
             <Divider/>
             <Heading>Are you the owner of this domain?</Heading>
             <Box alignment="center">
-              <Link href="https://app.sci.domains/domains/add">Verify Domain</Link>
+              <Link href={`https://app.sci.domains/domains/add/${domain}/${transaction.to}/${chainNumber}`}>Verify Domain</Link>
             </Box>
           </Box>
         }
