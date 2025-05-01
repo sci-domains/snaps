@@ -8,6 +8,7 @@ import { extractDomain, formatAddress, getRegistrationTime, wasVerifiedRecently 
 import { formatTimestamp } from "./utils/time";
 
 const ONE_DAY_MS = 86_400_000n * BigInt(3);
+
 // Handle outgoing transactions.
 export const onTransaction: OnTransactionHandler = async ({
   transactionOrigin,
