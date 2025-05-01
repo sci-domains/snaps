@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@ensdomains/ensjs": "^4.0.1-alpha.0",
-    "@metamask/snaps-sdk": "6.22.0",
+    "@metamask/snaps-sdk": "6.22.1",
     "@secure-ci/core": "1.0.1",
     "dotenv": "^16.0.1",
     "ethers": "6.13.4",
